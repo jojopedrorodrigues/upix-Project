@@ -19,6 +19,7 @@
 }
 
 .logo {
+  margin-right: 22px;
   height: 120px;
   width: 120px;
 }
@@ -78,13 +79,13 @@ p {
 .space-footer {
   padding-left: 368%;
 }
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 890px) {
   .space-footer {
-    padding-left: 660%;
+    padding-left: 715%;
   }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 780px) {
   .foto {
     height: 370px;
     padding-right: 220px;
@@ -96,8 +97,8 @@ p {
 }
 
 .logo-dois {
-  height: 195px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 }
 
 .centralize-footer {
@@ -107,7 +108,7 @@ p {
 }
 
 .logobaixo {
-  padding-bottom: 45px;
+  padding-bottom: 55px;
 }
 
 .pageone {
