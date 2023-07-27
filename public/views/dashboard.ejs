@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - upix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/maindash.css">
+  <link rel="stylesheet" type="text/css" href="/css/dash.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Dash</h1>
+      <div class="options">
+        <a class="space-button" href="#" data-bs-toggle="modal" data-bs-target="#pixModal">
+          <p class="botaonew">Fazer Pix</p>
+        </a>
+        <a class="space-button" href="#" onclick="openSidebar()">
+          <p class="botaonew">Meus Dados</p>
+        </a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="image-container">
+        <img src="/img/carteira.gif" alt="Dashboard Image" class="dashboard-image">
+        <p class="dashboard-text">Ainda não há pix registrado !</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="pixModal" tabindex="-1" aria-labelledby="pixModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title pixchavetitle" id="pixModalLabel">Fazer Pix</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="pix-key" class="col-form-label pixchavetitle">Chave Pix:</label>
+              <input type="text" class="form-control" id="pix-key">
+            </div>
+            <div class="form-group">
+              <label for="pix-type" class="col-form-label pixchavetitle">Tipo de Chave:</label>
+              <select class="form-control" id="pix-type">
+                <option>CPF</option>
+                <option>Aleatório</option>
+                <option>Número de Telefone</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary pixchavetitle" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="colorbtn btn btn-primary pixchavetitle">Próximo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="pixValueModal" tabindex="-1" aria-labelledby="pixValueModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pixValueModalLabel pixchavetitle ">Informar Valor do Pix</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="pix-value" class="col-form-label pixchavetitle">Valor do Pix:</label>
+              <input type="text" class="form-control" id="pix-value">
+            </div>
+            <div class="form-group">
+              <label for="pix-installments" class="col-form-label pixchavetitle">Parcelamento:</label>
+              <select class="form-control" id="pix-installments">
+                <option>1x</option>
+                <option>2x</option>
+                <option>3x</option>
+                <option>4x</option>
+                <option>5x</option>
+                <option>6x</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary pixchavetitle" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary pixValueNext colorbtn pixchavetitle ">Próximo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="creditCardModal" tabindex="-1" aria-labelledby="creditCardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="creditCardModalLabel pixchavetitle">Pagamento com Cartão de Crédito</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="form-checkout">
+            <div class="form-group">
+              <label for="card-name" class="col-form-label pixchavetitle">Nome do Titular:</label>
+              <input type="text" class="form-control" id="form-checkout__cardholderName">
+            </div>
+            <div class="form-group">
+              <label for="cpf" class="col-form-label pixchavetitle">CPF:</label>
+              <input type="text" class="form-control" id="form-checkout__identificationNumber">
+            </div>
+            <div class="form-group">
+              <label for="form-checkout__cardNumber" class="col-form-label pixchavetitle">Número do Cartão:</label>
+              <input type="text" class="form-control" id="form-checkout__cardNumber">
+            </div>
+            <div class="form-group">
+              <label for="form-checkout__cardExpirationMonth" class="col-form-label pixchavetitle">Mês de
+                Expiração:</label>
+              <input type="text" class="form-control" id="form-checkout__cardExpirationMonth">
+            </div>
+            <div class="form-group">
+              <label for="form-checkout__cardExpirationYear" class="col-form-label pixchavetitle">Ano de
+                Expiração:</label>
+              <input type="text" class="form-control" id="form-checkout__cardExpirationYear">
+            </div>
+            <div class="form-group">
+              <label for="form-checkout__securityCode" class="col-form-label pixchavetitle">CVV:</label>
+              <input type="text" class="form-control" id="form-checkout__securityCode">
+            </div>
+            <div class="form-group">
+              <label for="form-checkout__issuer" class="col-form-label pixchavetitle">Banco Emissor:</label>
+              <select class="form-control" id="form-checkout__issuer">
+                <option value="1">Banco 1</option>
+                <option value="2">Banco 2</option>
+                <option value="3">Banco 3</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="form-checkout__installments" class="col-form-label pixchavetitle">Parcelamento:</label>
+              <select class="form-control" id="form-checkout__installments">
+                <option value="1">1x</option>
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="submit" id="payButton"
+            class="btn btn-primary creditCardNext colorbtn pixchavetitle">Próximo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <script>
+    $(document).ready(function () {
+      var transactionAmount = 0;
+      $("#pix-value").mask('000.000.000.000.000,00', { reverse: true });
+
+      function updateInstallmentValues() {
+        var pixValue = $("#pix-value").val();
+        transactionAmount = parseFloat(pixValue.replace(/\./g, '').replace(',', '.'));
+        if (!isNaN(transactionAmount)) {
+          $("#pix-installments option").each(function () {
+            var installments = parseInt($(this).val().replace('x', ''));
+            var installmentValue = transactionAmount * 1.056 / installments + 0.35 + 0.0045 * installments;
+            installmentValue = installmentValue.toFixed(2).replace('.', ',');
+            $(this).text(installments + "x de R$ " + installmentValue);
+          });
+        }
+      }
+
+      $("#pix-value").change(updateInstallmentValues);
+
+      $(".colorbtn").on('click', function () {
+        var pixKey = $("#pix-key").val();
+        if (pixKey !== "") {
+          $('#pixModal').modal('hide');
+          $('#pixValueModal').modal('show');
+          updateInstallmentValues();
+        } else {
+          alert("Por favor, preencha a chave pix antes de clicar em próximo");
+        }
+      });
+
+      $(".pixValueNext").on('click', function () {
+        var pixValue = $("#pix-value").val();
+        if (pixValue !== "") {
+          $('#pixValueModal').modal('hide');
+          $('#creditCardModal').modal('show');
+        } else {
+          alert("Por favor, informe o valor do pix antes de clicar em próximo");
+        }
+      });
+
+      $("#payButton").on('click', function (event) {
+        event.preventDefault();
+
+        var form = $("#form-checkout");
+
+        $.ajax({
+          url: '/process_payment',
+          method: 'POST',
+          data: {
+            ...form.serialize(),
+            transaction_amount: transactionAmount
+          },
+          success: function (response) {
+            if (response.status === 'approved') {
+              alert('Pagamento aprovado!');
+            } else {
+              alert('Pagamento recusado!');
+            }
+          },
+          error: function () {
+            alert('Ocorreu um erro ao processar o pagamento.');
+          }
+        });
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

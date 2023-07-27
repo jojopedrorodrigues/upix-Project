@@ -27,7 +27,7 @@
       <div class="logo">
         <img src="/img/upixlogo.png" alt="Logo" class="logoform">
       </div>
-      <form action="/" method="POST" onsubmit="return validarSenha()">
+      <form action="/cadastro" method="POST" onsubmit="return validarSenha()">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         <label for="phone">Número de telefone:</label>
@@ -36,19 +36,19 @@
         <input type="password" id="password" name="password" required>
         <label for="confirm-password">Confirmação de Senha:</label>
         <input type="password" id="confirm-password" name="confirm-password" required>
-        <input type="submit" value="Cadastrar">
+        <input type="submit" value="Cadastrar" name="cadastroPage">
       </form>
     </div>
     <div id="sidebar-login" class="sidebarlogin sidebarlogin-close">
       <div class="logo">
         <img src="/img/upixlogo.png" alt="Logo" class="logo-login">
       </div>
-      <form>
+      <form action="/login" method="POST">
         <label for="login-email">Email:</label>
         <input type="email" id="login-email" name="email" required>
         <label for="login-password">Senha:</label>
         <input type="password" id="login-password" name="password" required>
-        <input type="submit" value="login">
+        <input type="submit" value="login" name="loginPage">
       </form>
     </div>
     <div class="footer">

@@ -117,8 +117,12 @@ p {
   height: 100%;
   align-items: center;
   padding: 10px;
-  background-color: rgb(44, 202, 142);
+  background-image: url('/img/backdois.png'); 
+  background-size: cover;  
+  background-repeat: no-repeat;  
+  background-position: center; 
   position: fixed;
+  opacity: 0.7;
   flex-direction: column;
   flex-direction: row;
   top: 0;
@@ -136,14 +140,14 @@ p {
 }
 .header a,
 .footer a {
-  color: #fff; /* Define a cor do texto dos links */
-  text-decoration: none; /* Remove o sublinhado dos links */
+  color: #fff; 
+  text-decoration: none; 
 }
 
 .header a:hover,
 .footer a:hover {
-  color: #fff; /* Define a cor do texto dos links ao passar o mouse */
-  text-decoration: none; /* Remove o sublinhado dos links ao passar o mouse */
+  color: #fff; 
+  text-decoration: none; 
 }
 
 .font-desc {
